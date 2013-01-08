@@ -1,0 +1,114 @@
+//pro.git
+//from itpub
+//zh_cn
+//h_0
+
+//global
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+//C:\Users\china\.gitconfig  [user]
+
+//local
+$ git config user.name "John Doe"
+$ git config user.email johndoe@example.com
+//.git/config
+
+vim
+ctl+c :q_
+
+$ git config --list
+
+$ git config user.name
+
+//3help
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+
+//init local
+$ git init
+
+$ git add *.c
+$ git add README
+$ git commit -m 'initial project version'
+
+//svn chekout
+$ git clone git://github.com/schacon/grit.git
+//new name
+$ git clone git://github.com/schacon/grit.git mygrit
+
+//protocal
+git:// 
+http(s):// 
+user@server:/path.git
+
+//gitignore
+$ cat >.gitignore
+*.[oa]
+*.~
+*.class
+# 此为注释 – 将被 Git 忽略
+*.a # 忽略所有 .a 结尾的文件
+!lib.a # 但 lib.a 除外
+/TODO # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/ # 忽略 build/ 目录下的所有文件
+doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+
+$ git diff
+$ git diff --cached
+
+$ git commit
+//add diff
+$ git commit -v
+
+ctl+c :w
+
+$ git commit -m "notes"
+
+$ git commit -a = $ git add  +  $ git commit
+
+//remove
+$ git rm grit.gemspec
+
+//rename
+$ git mv file_from file_to
+
+$ git log –p -2
+$ git log --stat
+
+//oneline short full fuller
+$ git log --pretty=oneline
+$ git log --pretty=format:"%h - %an, %ar : %s"
+
+%H 提交对象（commit）的完整哈希字串
+%h 提交对象的简短哈希字串
+%T 树对象（tree）的完整哈希字串
+%t 树对象的简短哈希字串
+%P 父对象（parent）的完整哈希字串
+%p 父对象的简短哈希字串
+%an 作者（author）的名字
+%ae 作者的电子邮件地址
+%ad 作者修订日期（可以用 -date= 选项定制格式）
+%ar 作者修订日期，按多久以前的方式显示
+%cn 提交者(committer)的名字
+%ce 提交者的电子邮件地址
+%cd 提交日期
+%cr 提交日期，按多久以前的方式显示
+%s 提交说明
+
+//图形显示
+$ git log --pretty=format:"%h %s" --graph
+$ git log --since=2.weeks
+
+$ git log --pretty="%h:%s" --author=gitster --since="2008-10-01" \
+--before="2008-11-01" --no-merges -- t/
+
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+$ git reset HEAD <file>
+
+$ git remote
+$ git remote -v
+
+$ git remote add pb git://github.com/paulboone/ticgit.git
