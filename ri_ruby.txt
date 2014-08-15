@@ -1,0 +1,2 @@
+gem install rdoc-data
+rdoc-data --install
